@@ -5,6 +5,7 @@ Tread = 8.52;//the depth of the Tread
 Tread_Thickness = 1;//the thickness of the Tread
 Rim_Depth = 2;//this is the depth of the drop that allows the nail head to hold the wheel properly
 Axle_Radius = 1.32;//radius for the axle
+Axle_Holder_Depth = 10.4;//depth for the axle holder
 Rim_Spoke_Diameter = 1.75;//diameter of the spoke
 Rim_Spoke_Multiplier = 1.5;//thickness
 Spoke_Count = 5;//the number of spokes to be distributed evenly arount the rim
@@ -52,7 +53,7 @@ module baseWheel(){
 	}
 
     //Axle spot, for the axle to enter
-    rotate_extrude(convexity = 20)translate([Axle_Radius, Rim_Depth, 0])square([1,(10.4 - Rim_Depth)]);
+    rotate_extrude(convexity = 20)translate([Axle_Radius, Rim_Depth, 0])square([1,(Axle_Holder_Depth - Rim_Depth)]);
 
     //Axle support for strengthining the bond between the axle and the rim
     rotate_extrude(convexity = 20)translate([Axle_Radius, Rim_Depth, 0])square([3,2]);
